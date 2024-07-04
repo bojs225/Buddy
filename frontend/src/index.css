@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-blur-image {
+  background-image: url("/src/2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.history-container {
+  display: grid;
+  transition: grid-template-rows 0.5s ease-out, opacity 0.5s ease-out;
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.history-container.collapsed {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+
+.history-content {
+  overflow: hidden;
+}
+
+.transaction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.glass-header {
+  @apply text-6xl md:text-7xl lg:text-8xl font-bold text-center relative z-50 pt-10 mb-10;
+  color: white; 
+  -webkit-text-fill-color: white; 
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; 
+  background: none; 
+}
+
+.glass-header:hover {
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+  }
+  to {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+  }
+}
+
+.auth-input {
+  @apply bg-white bg-opacity-20 border border-gray-950 border-opacity-50 rounded-lg px-4 py-2 text-white text-lg transition-all duration-300 ease-in-out;
+  backdrop-filter: blur(10px);
+  isolation: isolate;
+}
+
+.auth-input::placeholder {
+  @apply text-white text-opacity-100;
+}
+
+.auth-button {
+  @apply bg-white bg-opacity-25 text-white text-xl font-semibold rounded-lg px-6 py-3 transition-all duration-300 ease-in-out;
+  backdrop-filter: blur(5px);
+}
+
+.auth-button:hover {
+  @apply bg-opacity-35;
+}
+
+.auth-card {
+  @apply bg-white bg-opacity-25 border border-gray-950 border-opacity-50;
+}
+
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-md {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile {
+  @apply flex items-center bg-black bg-opacity-50 rounded-full px-4 py-2;
+}
+
+.user-avatar {
+  @apply w-10 h-10 rounded-full border-2 border-white cursor-pointer;
+}
+
+.user-greeting {
+  @apply text-white font-semibold text-lg text-shadow-sm ml-2;
+}
+
+.text-outline {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.glass-text {
+  @apply text-white bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-lg px-3 py-1;
+}
+.dropdown-container {
+  @apply absolute right-0 top-full mt-2 w-48 rounded-md shadow-lg z-50;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
